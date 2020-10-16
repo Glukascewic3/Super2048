@@ -116,7 +116,7 @@ hr {
   margin-bottom: 30px; }
 
 .container {
-  width: 984px;
+  width: 1226px;
   margin: 0 auto; }
 
 @-webkit-keyframes fade-in {
@@ -151,8 +151,8 @@ hr {
   touch-action: none;
   background: #bbada0;
   border-radius: 6px;
-  width: 984px;
-  height: 984px;
+  width: 1226px;
+  height: 1226px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
