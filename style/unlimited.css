@@ -1,0 +1,2203 @@
+@import url(fonts/clear-sans.css);
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #faf8ef;
+  color: #776e65;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px; }
+
+body {
+  margin: 80px 0; }
+
+.heading:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+h1.title {
+  font-size: 80px;
+  font-weight: bold;
+  margin: 0;
+  display: block;
+  float: left; }
+
+@-webkit-keyframes move-up {
+  0% {
+    top: 25px;
+    opacity: 1; }
+
+  100% {
+    top: -50px;
+    opacity: 0; } }
+@-moz-keyframes move-up {
+  0% {
+    top: 25px;
+    opacity: 1; }
+
+  100% {
+    top: -50px;
+    opacity: 0; } }
+@keyframes move-up {
+  0% {
+    top: 25px;
+    opacity: 1; }
+
+  100% {
+    top: -50px;
+    opacity: 0; } }
+.scores-container {
+  float: right;
+  text-align: right; }
+
+.score-container, .best-container {
+  position: relative;
+  display: inline-block;
+  background: #bbada0;
+  padding: 15px 25px;
+  font-size: 25px;
+  height: 25px;
+  line-height: 47px;
+  font-weight: bold;
+  border-radius: 3px;
+  color: white;
+  margin-top: 8px;
+  text-align: center; }
+  .score-container:after, .best-container:after {
+    position: absolute;
+    width: 100%;
+    top: 10px;
+    left: 0;
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 13px;
+    text-align: center;
+    color: #eee4da; }
+  .score-container .score-addition, .best-container .score-addition {
+    position: absolute;
+    right: 30px;
+    color: red;
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: bold;
+    color: rgba(119, 110, 101, 0.9);
+    z-index: 100;
+    -webkit-animation: move-up 600ms ease-in;
+    -moz-animation: move-up 600ms ease-in;
+    animation: move-up 600ms ease-in;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    animation-fill-mode: both; }
+
+.score-container:after {
+  content: "Score"; }
+
+.best-container:after {
+  content: "Best"; }
+
+p {
+  margin-top: 0;
+  margin-bottom: 10px;
+  line-height: 1.65; }
+
+a {
+  color: #776e65;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer; }
+
+strong.important {
+  text-transform: uppercase; }
+
+hr {
+  border: none;
+  border-bottom: 1px solid #d8d4d0;
+  margin-top: 20px;
+  margin-bottom: 30px; }
+
+.container {
+  width: 984px;
+  margin: 0 auto; }
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+@-moz-keyframes fade-in {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+.game-container {
+  margin-top: 40px;
+  position: relative;
+  padding: 15px;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -ms-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -ms-touch-action: none;
+  touch-action: none;
+  background: #bbada0;
+  border-radius: 6px;
+  width: 984px;
+  height: 984px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  .game-container .game-message {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(238, 228, 218, 0.5);
+    z-index: 100;
+    text-align: center;
+    -webkit-animation: fade-in 800ms ease 1200ms;
+    -moz-animation: fade-in 800ms ease 1200ms;
+    animation: fade-in 800ms ease 1200ms;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    animation-fill-mode: both; }
+    .game-container .game-message p {
+      font-size: 60px;
+      font-weight: bold;
+      height: 60px;
+      line-height: 60px;
+      margin-top: 222px; }
+    .game-container .game-message .lower {
+      display: block;
+      margin-top: 59px; }
+    .game-container .game-message a {
+      display: inline-block;
+      background: #8f7a66;
+      border-radius: 3px;
+      padding: 0 20px;
+      text-decoration: none;
+      color: #f9f6f2;
+      height: 40px;
+      line-height: 42px;
+      margin-left: 9px; }
+      .game-container .game-message a.keep-playing-button {
+        display: none; }
+    .game-container .game-message.game-won {
+      background: rgba(237, 194, 46, 0.5);
+      color: #f9f6f2; }
+      .game-container .game-message.game-won a.keep-playing-button {
+        display: inline-block; }
+    .game-container .game-message.game-won, .game-container .game-message.game-over {
+      display: block; }
+
+.grid-container {
+  position: absolute;
+  z-index: 1; }
+
+.grid-row {
+  margin-bottom: 15px; }
+  .grid-row:last-child {
+    margin-bottom: 0; }
+  .grid-row:after {
+    content: "";
+    display: block;
+    clear: both; }
+
+.grid-cell {
+  width: 106.25px;
+  height: 106.25px;
+  margin-right: 15px;
+  float: left;
+  border-radius: 3px;
+  background: rgba(238, 228, 218, 0.35); }
+  .grid-cell:last-child {
+    margin-right: 0; }
+
+.tile-container {
+  position: absolute;
+  z-index: 2; }
+
+.tile, .tile .tile-inner {
+  width: 107px;
+  height: 107px;
+  line-height: 116.25px; }
+.tile.tile-position-1-1 {
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  transform: translate(0px, 0px); }
+.tile.tile-position-1-2 {
+  -webkit-transform: translate(0px, 121px);
+  -moz-transform: translate(0px, 121px);
+  transform: translate(0px, 121px); }
+.tile.tile-position-1-3 {
+  -webkit-transform: translate(0px, 242px);
+  -moz-transform: translate(0px, 242px);
+  transform: translate(0px, 242px); }
+.tile.tile-position-1-4 {
+  -webkit-transform: translate(0px, 363px);
+  -moz-transform: translate(0px, 363px);
+  transform: translate(0px, 363px); }
+.tile.tile-position-1-5 {
+  -webkit-transform: translate(0px, 484px);
+  -moz-transform: translate(0px, 484px);
+  transform: translate(0px, 484px); }
+.tile.tile-position-1-6 {
+  -webkit-transform: translate(0px, 605px);
+  -moz-transform: translate(0px, 605px);
+  transform: translate(0px, 605px); }
+.tile.tile-position-1-7 {
+  -webkit-transform: translate(0px, 726px);
+  -moz-transform: translate(0px, 726px);
+  transform: translate(0px, 726px); }
+.tile.tile-position-1-8 {
+  -webkit-transform: translate(0px, 847px);
+  -moz-transform: translate(0px, 847px);
+  transform: translate(0px, 847px); }
+.tile.tile-position-2-1 {
+  -webkit-transform: translate(121px, 0px);
+  -moz-transform: translate(121px, 0px);
+  transform: translate(121px, 0px); }
+.tile.tile-position-2-2 {
+  -webkit-transform: translate(121px, 121px);
+  -moz-transform: translate(121px, 121px);
+  transform: translate(121px, 121px); }
+.tile.tile-position-2-3 {
+  -webkit-transform: translate(121px, 242px);
+  -moz-transform: translate(121px, 242px);
+  transform: translate(121px, 242px); }
+.tile.tile-position-2-4 {
+  -webkit-transform: translate(121px, 363px);
+  -moz-transform: translate(121px, 363px);
+  transform: translate(121px, 363px); }
+.tile.tile-position-2-5 {
+  -webkit-transform: translate(121px, 484px);
+  -moz-transform: translate(121px, 484px);
+  transform: translate(121px, 484px); }
+.tile.tile-position-2-6 {
+  -webkit-transform: translate(121px, 605px);
+  -moz-transform: translate(121px, 605px);
+  transform: translate(121px, 605px); }
+.tile.tile-position-2-7 {
+  -webkit-transform: translate(121px, 726px);
+  -moz-transform: translate(121px, 726px);
+  transform: translate(121px, 726px); }
+.tile.tile-position-2-8 {
+  -webkit-transform: translate(121px, 847px);
+  -moz-transform: translate(121px, 847px);
+  transform: translate(121px, 847px); }
+.tile.tile-position-3-1 {
+  -webkit-transform: translate(242px, 0px);
+  -moz-transform: translate(242px, 0px);
+  transform: translate(242px, 0px); }
+.tile.tile-position-3-2 {
+  -webkit-transform: translate(242px, 121px);
+  -moz-transform: translate(242px, 121px);
+  transform: translate(242px, 121px); }
+.tile.tile-position-3-3 {
+  -webkit-transform: translate(242px, 242px);
+  -moz-transform: translate(242px, 242px);
+  transform: translate(242px, 242px); }
+.tile.tile-position-3-4 {
+  -webkit-transform: translate(242px, 363px);
+  -moz-transform: translate(242px, 363px);
+  transform: translate(242px, 363px); }
+.tile.tile-position-3-5 {
+  -webkit-transform: translate(242px, 484px);
+  -moz-transform: translate(242px, 484px);
+  transform: translate(242px, 484px); }
+.tile.tile-position-3-6 {
+  -webkit-transform: translate(242px, 605px);
+  -moz-transform: translate(242px, 605px);
+  transform: translate(242px, 605px); }
+.tile.tile-position-3-7 {
+  -webkit-transform: translate(242px, 726px);
+  -moz-transform: translate(242px, 726px);
+  transform: translate(242px, 726px); }
+.tile.tile-position-3-8 {
+  -webkit-transform: translate(242px, 847px);
+  -moz-transform: translate(242px, 847px);
+  transform: translate(242px, 847px); }
+.tile.tile-position-4-1 {
+  -webkit-transform: translate(363px, 0px);
+  -moz-transform: translate(363px, 0px);
+  transform: translate(363px, 0px); }
+.tile.tile-position-4-2 {
+  -webkit-transform: translate(363px, 121px);
+  -moz-transform: translate(363px, 121px);
+  transform: translate(363px, 121px); }
+.tile.tile-position-4-3 {
+  -webkit-transform: translate(363px, 242px);
+  -moz-transform: translate(363px, 242px);
+  transform: translate(363px, 242px); }
+.tile.tile-position-4-4 {
+  -webkit-transform: translate(363px, 363px);
+  -moz-transform: translate(363px, 363px);
+  transform: translate(363px, 363px); }
+.tile.tile-position-4-5 {
+  -webkit-transform: translate(363px, 484px);
+  -moz-transform: translate(363px, 484px);
+  transform: translate(363px, 484px); }
+.tile.tile-position-4-6 {
+  -webkit-transform: translate(363px, 605px);
+  -moz-transform: translate(363px, 605px);
+  transform: translate(363px, 605px); }
+.tile.tile-position-4-7 {
+  -webkit-transform: translate(363px, 726px);
+  -moz-transform: translate(363px, 726px);
+  transform: translate(363px, 726px); }
+.tile.tile-position-4-8 {
+  -webkit-transform: translate(363px, 847px);
+  -moz-transform: translate(363px, 847px);
+  transform: translate(363px, 847px); }
+.tile.tile-position-5-1 {
+  -webkit-transform: translate(484px, 0px);
+  -moz-transform: translate(484px, 0px);
+  transform: translate(484px, 0px); }
+.tile.tile-position-5-2 {
+  -webkit-transform: translate(484px, 121px);
+  -moz-transform: translate(484px, 121px);
+  transform: translate(484px, 121px); }
+.tile.tile-position-5-3 {
+  -webkit-transform: translate(484px, 242px);
+  -moz-transform: translate(484px, 242px);
+  transform: translate(484px, 242px); }
+.tile.tile-position-5-4 {
+  -webkit-transform: translate(484px, 363px);
+  -moz-transform: translate(484px, 363px);
+  transform: translate(484px, 363px); }
+.tile.tile-position-5-5 {
+  -webkit-transform: translate(484px, 484px);
+  -moz-transform: translate(484px, 484px);
+  transform: translate(484px, 484px); }
+.tile.tile-position-5-6 {
+  -webkit-transform: translate(484px, 605px);
+  -moz-transform: translate(484px, 605px);
+  transform: translate(484px, 605px); }
+.tile.tile-position-5-7 {
+  -webkit-transform: translate(484px, 726px);
+  -moz-transform: translate(484px, 726px);
+  transform: translate(484px, 726px); }
+.tile.tile-position-5-8 {
+  -webkit-transform: translate(484px, 847px);
+  -moz-transform: translate(484px, 847px);
+  transform: translate(484px, 847px); }
+.tile.tile-position-6-1 {
+  -webkit-transform: translate(605px, 0px);
+  -moz-transform: translate(605px, 0px);
+  transform: translate(605px, 0px); }
+.tile.tile-position-6-2 {
+  -webkit-transform: translate(605px, 121px);
+  -moz-transform: translate(605px, 121px);
+  transform: translate(605px, 121px); }
+.tile.tile-position-6-3 {
+  -webkit-transform: translate(605px, 242px);
+  -moz-transform: translate(605px, 242px);
+  transform: translate(605px, 242px); }
+.tile.tile-position-6-4 {
+  -webkit-transform: translate(605px, 363px);
+  -moz-transform: translate(605px, 363px);
+  transform: translate(605px, 363px); }
+.tile.tile-position-6-5 {
+  -webkit-transform: translate(605px, 484px);
+  -moz-transform: translate(605px, 484px);
+  transform: translate(605px, 484px); }
+.tile.tile-position-6-6 {
+  -webkit-transform: translate(605px, 605px);
+  -moz-transform: translate(605px, 605px);
+  transform: translate(605px, 605px); }
+.tile.tile-position-6-7 {
+  -webkit-transform: translate(605px, 726px);
+  -moz-transform: translate(605px, 726px);
+  transform: translate(605px, 726px); }
+.tile.tile-position-6-8 {
+  -webkit-transform: translate(605px, 847px);
+  -moz-transform: translate(605px, 847px);
+  transform: translate(605px, 847px); }
+.tile.tile-position-7-1 {
+  -webkit-transform: translate(726px, 0px);
+  -moz-transform: translate(726px, 0px);
+  transform: translate(726px, 0px); }
+.tile.tile-position-7-2 {
+  -webkit-transform: translate(726px, 121px);
+  -moz-transform: translate(726px, 121px);
+  transform: translate(726px, 121px); }
+.tile.tile-position-7-3 {
+  -webkit-transform: translate(726px, 242px);
+  -moz-transform: translate(726px, 242px);
+  transform: translate(726px, 242px); }
+.tile.tile-position-7-4 {
+  -webkit-transform: translate(726px, 363px);
+  -moz-transform: translate(726px, 363px);
+  transform: translate(726px, 363px); }
+.tile.tile-position-7-5 {
+  -webkit-transform: translate(726px, 484px);
+  -moz-transform: translate(726px, 484px);
+  transform: translate(726px, 484px); }
+.tile.tile-position-7-6 {
+  -webkit-transform: translate(726px, 605px);
+  -moz-transform: translate(726px, 605px);
+  transform: translate(726px, 605px); }
+.tile.tile-position-7-7 {
+  -webkit-transform: translate(726px, 726px);
+  -moz-transform: translate(726px, 726px);
+  transform: translate(726px, 726px); }
+.tile.tile-position-7-8 {
+  -webkit-transform: translate(726px, 847px);
+  -moz-transform: translate(726px, 847px);
+  transform: translate(726px, 847px); }
+.tile.tile-position-8-1 {
+  -webkit-transform: translate(847px, 0px);
+  -moz-transform: translate(847px, 0px);
+  transform: translate(847px, 0px); }
+.tile.tile-position-8-2 {
+  -webkit-transform: translate(847px, 121px);
+  -moz-transform: translate(847px, 121px);
+  transform: translate(847px, 121px); }
+.tile.tile-position-8-3 {
+  -webkit-transform: translate(847px, 242px);
+  -moz-transform: translate(847px, 242px);
+  transform: translate(847px, 242px); }
+.tile.tile-position-8-4 {
+  -webkit-transform: translate(847px, 363px);
+  -moz-transform: translate(847px, 363px);
+  transform: translate(847px, 363px); }
+.tile.tile-position-8-5 {
+  -webkit-transform: translate(847px, 484px);
+  -moz-transform: translate(847px, 484px);
+  transform: translate(847px, 484px); }
+.tile.tile-position-8-6 {
+  -webkit-transform: translate(847px, 605px);
+  -moz-transform: translate(847px, 605px);
+  transform: translate(847px, 605px); }
+.tile.tile-position-8-7 {
+  -webkit-transform: translate(847px, 726px);
+  -moz-transform: translate(847px, 726px);
+  transform: translate(847px, 726px); }
+.tile.tile-position-8-8 {
+  -webkit-transform: translate(847px, 847px);
+  -moz-transform: translate(847px, 847px);
+  transform: translate(847px, 847px); }
+
+.tile {
+  position: absolute;
+  -webkit-transition: 100ms ease-in-out;
+  -moz-transition: 100ms ease-in-out;
+  transition: 100ms ease-in-out;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform; }
+  .tile .tile-inner {
+    border-radius: 3px;
+    background: #eee4da;
+    text-align: center;
+    font-weight: bold;
+    z-index: 10;
+    font-size: 55px; }
+  .tile.tile-1 .tile-inner {
+    background: #eee4da;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0); }
+  .tile.tile-2 .tile-inner {
+    background: #ede0c8;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0); }
+  .tile.tile-3 .tile-inner {
+    color: #f9f6f2;
+    background: #f2b179; }
+  .tile.tile-4 .tile-inner {
+    color: #f9f6f2;
+    background: #f59563; }
+  .tile.tile-5 .tile-inner {
+    color: #f9f6f2;
+    background: #f67c5f; }
+  .tile.tile-6 .tile-inner {
+    color: #f9f6f2;
+    background: #f65e3b; }
+  .tile.tile-7 .tile-inner {
+    color: #f9f6f2;
+    background: #edcf72;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2381), inset 0 0 0 1px rgba(255, 255, 255, 0.14286);
+    font-size: 45px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-7 .tile-inner {
+        font-size: 25px; } }
+  .tile.tile-8 .tile-inner {
+    color: #f9f6f2;
+    background: #edcc61;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048);
+    font-size: 45px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-8 .tile-inner {
+        font-size: 25px; } }
+  .tile.tile-9 .tile-inner {
+    color: #f9f6f2;
+    background: #edc850;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.39683), inset 0 0 0 1px rgba(255, 255, 255, 0.2381);
+    font-size: 45px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-9 .tile-inner {
+        font-size: 25px; } }
+  .tile.tile-10 .tile-inner {
+    color: #f9f6f2;
+    background: #edc53f;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.47619), inset 0 0 0 1px rgba(255, 255, 255, 0.28571);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-10 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-11 .tile-inner {
+    color: #f9f6f2;
+    background: #edc22e;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-11 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-12 .tile-inner {
+    color: #f9f6f2;
+    background: #8d378f5e;
+    box-shadow: 0 0 30px 10px rgba(165, 75, 164, 64%), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-12 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-13 .tile-inner {
+    color: #f9f6f2;
+    background: #9a389b85;
+    box-shadow: 0 0 30px 10px rgba(150, 55, 150, 72%), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-13 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-14 .tile-inner {
+    color: #f9f6f2;
+    background: #8c3e96b5;
+    box-shadow: 0 0 30px 10px rgba(139, 55, 134, 80%), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-14 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-15 .tile-inner {
+    color: #f9f6f2;
+    background: #8c3d86;
+    box-shadow: 0 0 30px 10px rgba(120, 56, 123, 80%), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-15 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-16 .tile-inner {
+    color: #f9f6f2;
+    background: #552259;
+    box-shadow: 0 0 30px 10px rgba(83, 38, 88, 77%), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-16 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-17 .tile-inner {
+    color: #f9f6f2;
+    background: #9d97ff;
+    box-shadow: 0 0 30px 10px rgb(160, 147, 255), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-17 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-18 .tile-inner {
+    color: #f9f6f2;
+    background: #9290ff;
+    box-shadow: 0 0 30px 10px rgb(169, 138, 255), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-18 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-19 .tile-inner {
+    color: #f9f6f2;
+    background: #5d52ff;
+    box-shadow: 0 0 30px 10px rgb(86, 104, 255), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-19 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-20 .tile-inner {
+    color: #f9f6f2;
+    background: #5738ff;
+    box-shadow: 0 0 30px 10px rgb(61, 32, 255), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-20 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-21 .tile-inner {
+    color: #f9f6f2;
+    background: #2800ff;
+    box-shadow: 0 0 30px 10px rgb(61, 32, 255), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-21 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-22 .tile-inner {
+    color: #f9f6f2;
+    background: #bebebe;
+    box-shadow: 0 0 30px 11px rgb(169, 169, 169), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-22 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-23 .tile-inner {
+    color: #f9f6f2;
+    background: #a8a8a8;
+    box-shadow: 0 0 30px 11px rgb(130, 130, 130), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-23 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-24 .tile-inner {
+    color: #f9f6f2;
+    background: #777777;
+    box-shadow: 0 0 30px 12px rgb(112, 112, 112), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-24 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-25 .tile-inner {
+    color: #f9f6f2;
+    background: #747474;
+    box-shadow: 0 0 30px 13px rgb(109, 109, 109), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-25 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-26 .tile-inner {
+    color: #f9f6f2;
+    background: #545454;
+    box-shadow: 0 0 30px 14px rgb(62, 62, 62), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-26 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-27 .tile-inner {
+    color: #f9f6f2;
+    background: #3e3e3e;
+    box-shadow: 0 0 30px 15px rgb(67, 67, 67), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-27 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-28 .tile-inner {
+    color: #f9f6f2;
+    background: #292929;
+    box-shadow: 0 0 30px 16px rgb(50, 50, 50), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-28 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-29 .tile-inner {
+    color: #f9f6f2;
+    background: #161616;
+    box-shadow: 0 0 30px 17px rgb(19, 19, 19), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-29 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-30 .tile-inner {
+    color: #f9f6f2;
+    background: #000000;
+    box-shadow: 0 0 30px 18px rgb(0, 0, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-30 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-31 .tile-inner {
+    color: #f9f6f2;
+    background: #ff0000;
+    box-shadow: 0 0 30px 19px rgb(255, 0, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-31 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-32 .tile-inner {
+    color: #f9f6f2;
+    background: #00ff08;
+    box-shadow: 0 0 30px 20px rgb(0, 255, 48), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-32 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-33 .tile-inner {
+    color: #f9f6f2;
+    background: #0400ff;
+    box-shadow: 0 0 30px 21px rgb(0, 3, 255), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-33 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-34 .tile-inner {
+    color: #f9f6f2;
+    background: #00f3ff;
+    box-shadow: 0 0 30px 22px rgb(0, 250, 255), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-34 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-35 .tile-inner {
+    color: #f9f6f2;
+    background: #00d0db;
+    box-shadow: 0 0 30px 23px rgb(0, 214, 218), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-35 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-36 .tile-inner {
+    color: #f9f6f2;
+    background: #00bec8;
+    box-shadow: 0 0 30px 24px rgb(0, 191, 195), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-36 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-37 .tile-inner {
+    color: #f9f6f2;
+    background: #00a0a0;
+    box-shadow: 0 0 30px 24px rgb(0, 191, 195), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-37 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-38 .tile-inner {
+    color: #f9f6f2;
+    background: #009090;
+    box-shadow: 0 0 30px 24px rgb(0, 189, 193), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-38 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-39 .tile-inner {
+    color: #f9f6f2;
+    background: #007777;
+    box-shadow: 0 0 30px 24px rgb(0, 189, 193), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-39 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-40 .tile-inner {
+    color: #f9f6f2;
+    background: #005d5d;
+    box-shadow: 0 0 30px 24px rgb(0, 189, 193), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-40 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-41 .tile-inner {
+    color: #f9f6f2;
+    background: #750070;
+    box-shadow: 0 0 30px 24px rgb(211, 0, 255), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-41 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-42 .tile-inner {
+    color: #f9f6f2;
+    background: #840092;
+    box-shadow: 0 0 30px 24px rgb(255, 0, 252), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-42 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-43 .tile-inner {
+    color: #f9f6f2;
+    background: #a000b1;
+    box-shadow: 0 0 30px 24px rgb(255, 0, 252), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-43 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-44 .tile-inner {
+    color: #f9f6f2;
+    background: #ae00c1;
+    box-shadow: 0 0 30px 24px rgb(255, 0, 252), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-44 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-45 .tile-inner {
+    color: #f9f6f2;
+    background: #e600ff;
+    box-shadow: 0 0 30px 24px rgb(255, 0, 252), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-45 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-46 .tile-inner {
+    color: #f9f6f2;
+    background: #ea25ff;
+    box-shadow: 0 0 30px 24px rgb(255, 98, 253), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-46 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-47 .tile-inner {
+    color: #f9f6f2;
+    background: #f066ff;
+    box-shadow: 0 0 30px 24px rgb(255, 98, 253), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-47 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-48 .tile-inner {
+    color: #f9f6f2;
+    background: #f6a3ff;
+    box-shadow: 0 0 30px 24px rgb(255, 98, 253), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-48 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-49 .tile-inner {
+    color: #f9f6f2;
+    background: #f8b7ff;
+    box-shadow: 0 0 30px 24px rgb(255, 255, 255), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-49 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-50 .tile-inner {
+    color: #f9f6f2;
+    background: #f9bfff;
+    box-shadow: 0 0 30px 24px rgb(255, 255, 255), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-50 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-51 .tile-inner {
+    color: #f9f6f2;
+    background: #fac8ff;
+    box-shadow: 0 0 30px 24px rgb(255, 255, 255), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-51 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-52 .tile-inner {
+    color: #f9f6f2;
+    background: #facfff;
+    box-shadow: 0 0 30px 24px rgb(255, 255, 255), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-52 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-53 .tile-inner {
+    color: #f9f6f2;
+    background: #ffffff;
+    box-shadow: 0 0 30px 24px rgb(255, 255, 255), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-53 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-54 .tile-inner {
+    color: #000000;
+    background: #c4ffd0;
+    box-shadow: 0 0 30px 24px rgb(27, 255, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-54 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-55 .tile-inner {
+    color: #000000;
+    background: #a9ff91;
+    box-shadow: 0 0 30px 24px rgb(74, 255, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-55 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-56 .tile-inner {
+    color: #000000;
+    background: #20ff00;
+    box-shadow: 0 0 30px 24px rgb(39, 255, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-56 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-57 .tile-inner {
+    color: #000000;
+    background: #28e800;
+    box-shadow: 0 0 30px 24px rgb(74, 255, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-57 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-58 .tile-inner {
+    color: #000000;
+    background: #1ace00;
+    box-shadow: 0 0 30px 24px rgb(34, 220, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-58 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-59 .tile-inner {
+    color: #000000;
+    background: #0da500;
+    box-shadow: 0 0 30px 24px rgb(53, 183, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-59 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-60 .tile-inner {
+    color: #020202;
+    background: #920000;
+    box-shadow: 0 0 30px 24px rgb(255, 0, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-60 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-61 .tile-inner {
+    color: #000000;
+    background: #c50000;
+    box-shadow: 0 0 30px 24px rgb(245, 8, 8), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-61 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-62 .tile-inner {
+    color: #000000;
+    background: #c50000;
+    box-shadow: 0 0 30px 24px rgb(252, 2, 2), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-4611686018427388000 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-63 .tile-inner {
+    color: #000000;
+    background: #ff0000;
+    box-shadow: 0 0 30px 24px rgb(255, 0, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-63 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-64 .tile-inner {
+    color: #ffff00;
+    background: #ff00b5;
+    box-shadow: 0 0 30px 24px rgb(255, 0, 129), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-64 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-65 .tile-inner {
+    color: #f4ff00;
+    background: #d300ff;
+    box-shadow: 0 0 30px 24px rgb(204, 0, 255), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-65 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-66 .tile-inner {
+    color: #ffdb00;
+    background: #b000ff;
+    box-shadow: 0 0 30px 24px rgb(193, 0, 255), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-66 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-67 .tile-inner {
+    color: #ffa000;
+    background: #6900ff;
+    box-shadow: 0 0 30px 24px rgb(134, 0, 255), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-67 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-68 .tile-inner {
+    color: #ff9200;
+    background: #2e00ff;
+    box-shadow: 0 0 30px 24px rgb(0, 19, 255), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-68 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-69 .tile-inner {
+    color: #ff0000;
+    background: #003cff;
+    box-shadow: 0 0 30px 24px rgb(4, 0, 255), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-69 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-70 .tile-inner {
+    color: #ff0000;
+    background: #0077ff;
+    box-shadow: 0 0 30px 24px rgb(0, 107, 255), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-70 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-71 .tile-inner {
+    color: #a70000;
+    background: #00e0ff;
+    box-shadow: 0 0 30px 24px rgb(0, 201, 255), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-71 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-72 .tile-inner {
+    color: #8c0000;
+    background: #00ffa8;
+    box-shadow: 0 0 30px 24px rgb(0, 254, 172), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-72 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-73 .tile-inner {
+    color: #7f8c00;
+    background: #00ff4a;
+    box-shadow: 0 0 30px 24px rgb(0, 254, 75), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-73 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-74 .tile-inner {
+    color: #1f8c00;
+    background: #09ff00;
+    box-shadow: 0 0 30px 24px rgb(9, 255, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-74 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-75 .tile-inner {
+    color: #70a500;
+    background: #c0ff00;
+    box-shadow: 0 0 30px 24px rgb(190, 255, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-75 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-76 .tile-inner {
+    color: #000000;
+    background: #ffac00;
+    background-image:
+      -moz-linear-gradient(45deg, #153bb7 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #153bb7 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #153bb7 75%),
+      -moz-linear-gradient(-45deg, #9697ae 75%, #153bb7 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #ff9700), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #ff9700), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #ff9700)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #ff9700));
+
+    -moz-background-size:107px 107px;
+    background-size:107px 107px;
+    -webkit-background-size:107px 107px; /* override value for shitty webkit */
+    
+    background-position:0 0, 53.5px 0, 53.5px -53.5px, 0px 53.5px;
+    box-shadow: 0 0 30px 10px rgb(255, 189, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-76 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-77 .tile-inner {
+    color: #000000;
+    background: #ff6201;
+    background-image:
+      -moz-linear-gradient(45deg, #ff9e01 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #ff9e01 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #ff9e01 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, #ff9e01 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #ff9e01), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #ff9e01), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #ff9e01)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #ff9e01));
+
+    -moz-background-size:107px 107px;
+    background-size:107px 107px;
+    -webkit-background-size:107px 107px; /* override value for shitty webkit */
+    
+    background-position:0 0, 53.5px 0, 53.5px -53.5px, 0px 53.5px;
+    box-shadow: 0 0 30px 10px rgb(255, 189, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-77 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-78 .tile-inner {
+    color: #000000;
+    background: #de0000;
+    background-image:
+      -moz-linear-gradient(45deg, #ff6300 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #ff6300 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #ff6300 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, #ff6300 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #ff6300), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #ff6300), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #ff6300)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #ff6300));
+
+    -moz-background-size:107px 107px;
+    background-size:107px 107px;
+    -webkit-background-size:107px 107px; /* override value for shitty webkit */
+    
+    background-position:0 0, 53.5px 0, 53.5px -53.5px, 0px 53.5px;
+    box-shadow: 0 0 30px 10px rgb(255, 189, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-78 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-79 .tile-inner {
+    color: #000000;
+    background: #a80000;
+    background-image:
+      -moz-linear-gradient(45deg, #cd4f01 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #cd4f01 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #cd4f01 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, #cd4f01 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #cd4f01), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #cd4f01), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #cd4f01)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #cd4f01));
+
+    -moz-background-size:107px 107px;
+    background-size:107px 107px;
+    -webkit-background-size:107px 107px; /* override value for shitty webkit */
+    
+    background-position:0 0, 53.5px 0, 53.5px -53.5px, 0px 53.5px;
+    box-shadow: 0 0 30px 10px rgb(255, 189, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-79 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-80 .tile-inner {
+    color: #ffffff;
+    background: #820000;
+    background-image:
+      -moz-linear-gradient(45deg, #a94200 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #a94200 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #a94200 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, #a94200 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #a94200), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #a94200), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #a94200)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #a94200));
+
+    -moz-background-size:107px 107px;
+    background-size:107px 107px;
+    -webkit-background-size:107px 107px; /* override value for shitty webkit */
+    
+    background-position:0 0, 53.5px 0, 53.5px -53.5px, 0px 53.5px;
+    box-shadow: 0 0 30px 10px rgb(255, 189, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-80 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-81 .tile-inner {
+    color: #ffffff;
+    background: #524800;
+    background-image:
+      -moz-linear-gradient(45deg, #5e2400 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #5e2400 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #5e2400 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, #5e2400 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #5e2400), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #5e2400), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #5e2400)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #5e2400));
+
+    -moz-background-size:107px 107px;
+    background-size:107px 107px;
+    -webkit-background-size:107px 107px; /* override value for shitty webkit */
+    
+    background-position:0 0, 53.5px 0, 53.5px -53.5px, 0px 53.5px;
+    box-shadow: 0 0 30px 10px rgb(62, 255, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-81 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-82 .tile-inner {
+    color: #ffffff;
+    background: #005303;
+    background-image:
+      -moz-linear-gradient(45deg, #5e5400 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #5e5400 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #5e5400 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, #5e2400 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #5e5400), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #5e5400), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #5e5400)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #5e5400));
+
+    -moz-background-size:107px 107px;
+    background-size:107px 107px;
+    -webkit-background-size:107px 107px; /* override value for shitty webkit */
+    
+    background-position:0 0, 53.5px 0, 53.5px -53.5px, 0px 53.5px;
+    box-shadow: 0 0 30px 10px rgb(85, 162, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-82 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-83 .tile-inner {
+    color: #ffffff;
+    background: #007c04;
+    background-image:
+      -moz-linear-gradient(45deg, #095e01 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #095e01 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #095e01 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, #095e01 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #095e01), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #095e01), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #095e01)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #095e01));
+
+    -moz-background-size:107px 107px;
+    background-size:107px 107px;
+    -webkit-background-size:107px 107px; /* override value for shitty webkit */
+    
+    background-position:0 0, 53.5px 0, 53.5px -53.5px, 0px 53.5px;
+    box-shadow: 0 0 30px 10px rgb(85, 162, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-83 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-84 .tile-inner {
+    color: #ffffff;
+    background: #848100;
+    background-image:
+      -moz-linear-gradient(45deg, #518600 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #518600 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #518600 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, #518600 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #518600), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #518600), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #518600)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #518600));
+
+    -moz-background-size:107px 107px;
+    background-size:107px 107px;
+    -webkit-background-size:107px 107px; /* override value for shitty webkit */
+    
+    background-position:0 0, 53.5px 0, 53.5px -53.5px, 0px 53.5px;
+    box-shadow: 0 0 30px 10px rgb(85, 162, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-84 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-85 .tile-inner {
+    color: #ffffff;
+    background: #cdc700;
+    background-image:
+      -moz-linear-gradient(45deg, #6bb100 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #6bb100 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #6bb100 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, #6bb100 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #6bb100), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #6bb100), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #6bb100)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #6bb100));
+
+    -moz-background-size:107px 107px;
+    background-size:107px 107px;
+    -webkit-background-size:107px 107px; /* override value for shitty webkit */
+    
+    background-position:0 0, 53.5px 0, 53.5px -53.5px, 0px 53.5px;
+    box-shadow: 0 0 30px 10px rgb(85, 162, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-85 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-86 .tile-inner {
+    color: #000000;
+    background: #fff800;
+    background-image:
+      -moz-linear-gradient(45deg, #6bb100 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #6bb100 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #6bb100 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, #6bb100 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #c8c601), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #c8c601), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #c8c601)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #c8c601));
+
+    -moz-background-size:107px 107px;
+    background-size:107px 107px;
+    -webkit-background-size:107px 107px; /* override value for shitty webkit */
+    
+    background-position:0 0, 53.5px 0, 53.5px -53.5px, 0px 53.5px;
+    box-shadow: 0 0 30px 10px rgb(85, 162, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-86 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-87 .tile-inner {
+    color: #000000;
+    background: #62ff00;
+    background-image:
+      -moz-linear-gradient(45deg, #fffc00 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #fffc00 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #fffc00 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, #fffc00 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #fffc00), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #fffc00), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #fffc00)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #fffc00));
+
+    -moz-background-size:107px 107px;
+    background-size:107px 107px;
+    -webkit-background-size:107px 107px; /* override value for shitty webkit */
+    
+    background-position:0 0, 53.5px 0, 53.5px -53.5px, 0px 53.5px;
+    box-shadow: 0 0 30px 10px rgb(85, 162, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-87 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-88 .tile-inner {
+    color: #000000;
+    background: #0eeb00;
+    background-image:
+      -moz-linear-gradient(45deg, #13fd00 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #13fd00 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #13fd00 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, #13fd00 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #13fd00), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #13fd00), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #13fd00)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #13fd00));
+
+    -moz-background-size:107px 107px;
+    background-size:107px 107px;
+    -webkit-background-size:107px 107px; /* override value for shitty webkit */
+    
+    background-position:0 0, 53.5px 0, 53.5px -53.5px, 0px 53.5px;
+    box-shadow: 0 0 30px 10px rgb(85, 162, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-88 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-89 .tile-inner {
+    color: #000000;
+    background: #acd701;
+    background-image:
+      -moz-linear-gradient(45deg, #13da01 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #13da01 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #13da01 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, #13da01 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #13da01), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #13da01), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #13da01)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #13da01));
+
+    -moz-background-size:107px 107px;
+    background-size:107px 107px;
+    -webkit-background-size:107px 107px; /* override value for shitty webkit */
+    
+    background-position:0 0, 53.5px 0, 53.5px -53.5px, 0px 53.5px;
+    box-shadow: 0 0 30px 10px rgb(85, 162, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-89 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-90 .tile-inner {
+    color: #000000;
+    background: #d79f00;
+    background-image:
+      -moz-linear-gradient(45deg, #d3da00 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #d3da00 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #d3da00 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, #d3da00 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #d3da00), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #d3da00), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #d3da00)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #d3da00));
+
+    -moz-background-size:107px 107px;
+    background-size:107px 107px;
+    -webkit-background-size:107px 107px; /* override value for shitty webkit */
+    
+    background-position:0 0, 53.5px 0, 53.5px -53.5px, 0px 53.5px;
+    box-shadow: 0 0 30px 10px rgb(255, 212, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-90 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-91 .tile-inner {
+    color: #000000;
+    background: #d76d00;
+    background-image:
+      -moz-linear-gradient(45deg, #daa700 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #daa700 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #daa700 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, #daa700 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #daa700), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #daa700), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #daa700)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #daa700));
+
+    -moz-background-size:107px 107px;
+    background-size:107px 107px;
+    -webkit-background-size:107px 107px; /* override value for shitty webkit */
+    
+    background-position:0 0, 53.5px 0, 53.5px -53.5px, 0px 53.5px;
+    box-shadow: 0 0 30px 10px rgb(255, 177, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-91 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-92 .tile-inner {
+    color: #000000;
+    background: #fe0000;
+    background-image:
+      -moz-linear-gradient(45deg, #db7300 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #db7300 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #db7300 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, #db7300 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #db7300), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #db7300), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #db7300)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #db7300));
+
+    -moz-background-size:107px 107px;
+    background-size:107px 107px;
+    -webkit-background-size:107px 107px; /* override value for shitty webkit */
+    
+    background-position:0 0, 53.5px 0, 53.5px -53.5px, 0px 53.5px;
+    box-shadow: 0 0 30px 10px rgb(255, 0, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-92 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-93 .tile-inner {
+    color: #000000;
+    background: #ff0046;
+    background-image:
+      -moz-linear-gradient(45deg, #fe0000 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #fe0000 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #fe0000 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, #fe0000 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #fe0000), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #fe0000), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #fe0000)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #fe0000));
+
+    -moz-background-size:107px 107px;
+    background-size:107px 107px;
+    -webkit-background-size:107px 107px; /* override value for shitty webkit */
+    
+    background-position:0 0, 53.5px 0, 53.5px -53.5px, 0px 53.5px;
+    box-shadow: 0 0 30px 10px rgb(255, 0, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-93 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-94 .tile-inner {
+    color: #ffffff;
+    background: #ff00a4;
+    background-image:
+      -moz-linear-gradient(45deg, #ff0078 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #ff0078 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #ff0078 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, #ff0078 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #ff0078), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #ff0078), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #ff0078)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #ff0078));
+
+    -moz-background-size:107px 107px;
+    background-size:107px 107px;
+    -webkit-background-size:107px 107px; /* override value for shitty webkit */
+    
+    background-position:0 0, 53.5px 0, 53.5px -53.5px, 0px 53.5px;
+    box-shadow: 0 0 30px 10px rgb(255, 0, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-94 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-95 .tile-inner {
+    color: #ffffff;
+    background: #fe00ec;
+    background-image:
+      -moz-linear-gradient(45deg, #ff00b4 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #ff00b4 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #ff00b4 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, #ff00b4 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #ff00b4), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #ff00b4), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #ff00b4)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #ff00b4));
+
+    -moz-background-size:107px 107px;
+    background-size:107px 107px;
+    -webkit-background-size:107px 107px; /* override value for shitty webkit */
+    
+    background-position:0 0, 53.5px 0, 53.5px -53.5px, 0px 53.5px;
+    box-shadow: 0 0 30px 10px rgb(255, 0, 129), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-95 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-96 .tile-inner {
+    color: #ffffff;
+    background: #f000ff;
+    background-image:
+      -moz-linear-gradient(45deg, #ff00da 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #ff00da 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #ff00da 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, #ff00da 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #ff00da), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #ff00da), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #ff00da)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #ff00da));
+
+    -moz-background-size:107px 107px;
+    background-size:107px 107px;
+    -webkit-background-size:107px 107px; /* override value for shitty webkit */
+    
+    background-position:0 0, 53.5px 0, 53.5px -53.5px, 0px 53.5px;
+    box-shadow: 0 0 30px 10px rgb(255, 0, 211), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-96 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-97 .tile-inner {
+    color: #ffffff;
+    background: #e000ff;
+    background-image:
+      -moz-linear-gradient(45deg, #f500fe 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #f500fe 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #f500fe 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, #f500fe 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #f500fe), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #f500fe), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #f500fe)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #f500fe));
+
+    -moz-background-size:107px 107px;
+    background-size:107px 107px;
+    -webkit-background-size:107px 107px; /* override value for shitty webkit */
+    
+    background-position:0 0, 53.5px 0, 53.5px -53.5px, 0px 53.5px;
+    box-shadow: 0 0 30px 10px rgb(255, 0, 211), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-97 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-98 .tile-inner {
+    color: #ffffff;
+    background: #bf00fe;
+    background-image:
+      -moz-linear-gradient(45deg, #d600ff 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #d600ff 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #d600ff 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, #d600ff 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #d600ff), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #d600ff), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #d600ff)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #d600ff));
+
+    -moz-background-size:107px 107px;
+    background-size:107px 107px;
+    -webkit-background-size:107px 107px; /* override value for shitty webkit */
+    
+    background-position:0 0, 53.5px 0, 53.5px -53.5px, 0px 53.5px;
+    box-shadow: 0 0 30px 10px rgb(255, 0, 211), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-98 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-99 .tile-inner {
+    color: #ffffff;
+    background: #9100ff;
+    background-image:
+      -moz-linear-gradient(45deg, #ae00ff 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #ae00ff 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #ae00ff 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, #ae00ff 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #ae00ff), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #ae00ff), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #ae00ff)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #ae00ff));
+
+    -moz-background-size:107px 107px;
+    background-size:107px 107px;
+    -webkit-background-size:107px 107px; /* override value for shitty webkit */
+    
+    background-position:0 0, 53.5px 0, 53.5px -53.5px, 0px 53.5px;
+    box-shadow: 0 0 30px 10px rgb(255, 0, 211), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-99 .tile-inner {
+        font-size: 15px; } }
+  .tile.tile-100 .tile-inner {
+    color: #ffffff;
+    background: #3f00ff;
+    background-image:
+      -moz-linear-gradient(45deg, #8c00ff 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #8c00ff 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #8c00ff 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, #8c00ff 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #8c00ff), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #8c00ff), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #8c00ff)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #8c00ff));
+
+    -moz-background-size:107px 107px;
+    background-size:107px 107px;
+    -webkit-background-size:107px 107px; /* override value for shitty webkit */
+    
+    background-position:0 0, 53.5px 0, 53.5px -53.5px, 0px 53.5px;
+    box-shadow: 0 0 30px 10px rgb(255, 0, 211), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-100 .tile-inner {
+        font-size: 15px; } }
+
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    transform: scale(0); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    transform: scale(1); } }
+@-moz-keyframes appear {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    transform: scale(0); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    transform: scale(1); } }
+@keyframes appear {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    transform: scale(0); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    transform: scale(1); } }
+.tile-new .tile-inner {
+  -webkit-animation: appear 200ms ease 100ms;
+  -moz-animation: appear 200ms ease 100ms;
+  animation: appear 200ms ease 100ms;
+  -webkit-animation-fill-mode: backwards;
+  -moz-animation-fill-mode: backwards;
+  animation-fill-mode: backwards; }
+
+@-webkit-keyframes pop {
+  0% {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    transform: scale(0); }
+
+  50% {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    transform: scale(1.2); }
+
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    transform: scale(1); } }
+@-moz-keyframes pop {
+  0% {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    transform: scale(0); }
+
+  50% {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    transform: scale(1.2); }
+
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    transform: scale(1); } }
+@keyframes pop {
+  0% {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    transform: scale(0); }
+
+  50% {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    transform: scale(1.2); }
+
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    transform: scale(1); } }
+.tile-merged .tile-inner {
+  z-index: 20;
+  -webkit-animation: pop 200ms ease 100ms;
+  -moz-animation: pop 200ms ease 100ms;
+  animation: pop 200ms ease 100ms;
+  -webkit-animation-fill-mode: backwards;
+  -moz-animation-fill-mode: backwards;
+  animation-fill-mode: backwards; }
+
+.above-game:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+.game-intro {
+  float: left;
+  line-height: 42px;
+  margin-bottom: 0; }
+
+.restart-button {
+  display: inline-block;
+  background: #8f7a66;
+  border-radius: 3px;
+  padding: 0 20px;
+  text-decoration: none;
+  color: #f9f6f2;
+  height: 40px;
+  line-height: 42px;
+  display: block;
+  text-align: center;
+  float: right; }
+
+.game-explanation {
+  margin-top: 50px; }
+
+@media screen and (max-width: 480px) {
+  html, body {
+    font-size: 15px; }
+
+  body {
+    margin: 20px 0;
+    padding: 0 20px; }
+
+  h1.title {
+    font-size: 27px;
+    margin-top: 15px; }
+
+  .container {
+    width: 550px;
+    margin: 0 auto; }
+
+  .score-container, .best-container {
+    margin-top: 0;
+    padding: 15px 10px;
+    min-width: 40px; }
+
+  .heading {
+    margin-bottom: 10px; }
+
+  .game-intro {
+    width: 55%;
+    display: block;
+    box-sizing: border-box;
+    line-height: 1.65; }
+
+  .restart-button {
+    width: 42%;
+    padding: 0;
+    display: block;
+    box-sizing: border-box;
+    margin-top: 2px; }
+
+  .game-container {
+    margin-top: 40px;
+    position: relative;
+    padding: 10px;
+    cursor: default;
+    -webkit-touch-callout: none;
+    -ms-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -ms-touch-action: none;
+    touch-action: none;
+    background: #bbada0;
+    border-radius: 6px;
+    width: 550px;
+    height: 550px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+    .game-container .game-message {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(238, 228, 218, 0.5);
+      z-index: 100;
+      text-align: center;
+      -webkit-animation: fade-in 800ms ease 1200ms;
+      -moz-animation: fade-in 800ms ease 1200ms;
+      animation: fade-in 800ms ease 1200ms;
+      -webkit-animation-fill-mode: both;
+      -moz-animation-fill-mode: both;
+      animation-fill-mode: both; }
+      .game-container .game-message p {
+        font-size: 60px;
+        font-weight: bold;
+        height: 60px;
+        line-height: 60px;
+        margin-top: 222px; }
+      .game-container .game-message .lower {
+        display: block;
+        margin-top: 59px; }
+      .game-container .game-message a {
+        display: inline-block;
+        background: #8f7a66;
+        border-radius: 3px;
+        padding: 0 20px;
+        text-decoration: none;
+        color: #f9f6f2;
+        height: 40px;
+        line-height: 42px;
+        margin-left: 9px; }
+        .game-container .game-message a.keep-playing-button {
+          display: none; }
+      .game-container .game-message.game-won {
+        background: rgba(237, 194, 46, 0.5);
+        color: #f9f6f2; }
+        .game-container .game-message.game-won a.keep-playing-button {
+          display: inline-block; }
+      .game-container .game-message.game-won, .game-container .game-message.game-over {
+        display: block; }
+
+  .grid-container {
+    position: absolute;
+    z-index: 1; }
+
+  .grid-row {
+    margin-bottom: 10px; }
+    .grid-row:last-child {
+      margin-bottom: 0; }
+    .grid-row:after {
+      content: "";
+      display: block;
+      clear: both; }
+
+  .grid-cell {
+    width: 57.5px;
+    height: 57.5px;
+    margin-right: 10px;
+    float: left;
+    border-radius: 3px;
+    background: rgba(238, 228, 218, 0.35); }
+    .grid-cell:last-child {
+      margin-right: 0; }
+
+  .tile-container {
+    position: absolute;
+    z-index: 2; }
+
+  .tile, .tile .tile-inner {
+    width: 58px;
+    height: 58px;
+    line-height: 67.5px; }
+  .tile.tile-position-1-1 {
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    transform: translate(0px, 0px); }
+  .tile.tile-position-1-2 {
+    -webkit-transform: translate(0px, 68px);
+    -moz-transform: translate(0px, 68px);
+    transform: translate(0px, 68px); }
+  .tile.tile-position-1-3 {
+    -webkit-transform: translate(0px, 136px);
+    -moz-transform: translate(0px, 136px);
+    transform: translate(0px, 136px); }
+  .tile.tile-position-1-4 {
+    -webkit-transform: translate(0px, 204px);
+    -moz-transform: translate(0px, 204px);
+    transform: translate(0px, 204px); }
+  .tile.tile-position-1-5 {
+    -webkit-transform: translate(0px, 272px);
+    -moz-transform: translate(0px, 272px);
+    transform: translate(0px, 272px); }
+  .tile.tile-position-1-6 {
+    -webkit-transform: translate(0px, 340px);
+    -moz-transform: translate(0px, 340px);
+    transform: translate(0px, 340px); }
+  .tile.tile-position-1-7 {
+    -webkit-transform: translate(0px, 408px);
+    -moz-transform: translate(0px, 408px);
+    transform: translate(0px, 408px); }
+  .tile.tile-position-1-8 {
+    -webkit-transform: translate(0px, 476px);
+    -moz-transform: translate(0px, 476px);
+    transform: translate(0px, 476px); }
+  .tile.tile-position-2-1 {
+    -webkit-transform: translate(68px, 0px);
+    -moz-transform: translate(68px, 0px);
+    transform: translate(68px, 0px); }
+  .tile.tile-position-2-2 {
+    -webkit-transform: translate(68px, 68px);
+    -moz-transform: translate(68px, 68px);
+    transform: translate(68px, 68px); }
+  .tile.tile-position-2-3 {
+    -webkit-transform: translate(68px, 136px);
+    -moz-transform: translate(68px, 136px);
+    transform: translate(68px, 136px); }
+  .tile.tile-position-2-4 {
+    -webkit-transform: translate(68px, 204px);
+    -moz-transform: translate(68px, 204px);
+    transform: translate(68px, 204px); }
+  .tile.tile-position-2-5 {
+    -webkit-transform: translate(68px, 272px);
+    -moz-transform: translate(68px, 272px);
+    transform: translate(68px, 272px); }
+  .tile.tile-position-2-6 {
+    -webkit-transform: translate(68px, 340px);
+    -moz-transform: translate(68px, 340px);
+    transform: translate(68px, 340px); }
+  .tile.tile-position-2-7 {
+    -webkit-transform: translate(68px, 408px);
+    -moz-transform: translate(68px, 408px);
+    transform: translate(68px, 408px); }
+  .tile.tile-position-2-8 {
+    -webkit-transform: translate(68px, 476px);
+    -moz-transform: translate(68px, 476px);
+    transform: translate(68px, 476px); }
+  .tile.tile-position-3-1 {
+    -webkit-transform: translate(136px, 0px);
+    -moz-transform: translate(136px, 0px);
+    transform: translate(136px, 0px); }
+  .tile.tile-position-3-2 {
+    -webkit-transform: translate(136px, 68px);
+    -moz-transform: translate(136px, 68px);
+    transform: translate(136px, 68px); }
+  .tile.tile-position-3-3 {
+    -webkit-transform: translate(136px, 136px);
+    -moz-transform: translate(136px, 136px);
+    transform: translate(136px, 136px); }
+  .tile.tile-position-3-4 {
+    -webkit-transform: translate(136px, 204px);
+    -moz-transform: translate(136px, 204px);
+    transform: translate(136px, 204px); }
+  .tile.tile-position-3-5 {
+    -webkit-transform: translate(136px, 272px);
+    -moz-transform: translate(136px, 272px);
+    transform: translate(136px, 272px); }
+  .tile.tile-position-3-6 {
+    -webkit-transform: translate(136px, 340px);
+    -moz-transform: translate(136px, 340px);
+    transform: translate(136px, 340px); }
+  .tile.tile-position-3-7 {
+    -webkit-transform: translate(136px, 408px);
+    -moz-transform: translate(136px, 408px);
+    transform: translate(136px, 408px); }
+  .tile.tile-position-3-8 {
+    -webkit-transform: translate(136px, 476px);
+    -moz-transform: translate(136px, 476px);
+    transform: translate(136px, 476px); }
+  .tile.tile-position-4-1 {
+    -webkit-transform: translate(204px, 0px);
+    -moz-transform: translate(204px, 0px);
+    transform: translate(204px, 0px); }
+  .tile.tile-position-4-2 {
+    -webkit-transform: translate(204px, 68px);
+    -moz-transform: translate(204px, 68px);
+    transform: translate(204px, 68px); }
+  .tile.tile-position-4-3 {
+    -webkit-transform: translate(204px, 136px);
+    -moz-transform: translate(204px, 136px);
+    transform: translate(204px, 136px); }
+  .tile.tile-position-4-4 {
+    -webkit-transform: translate(204px, 204px);
+    -moz-transform: translate(204px, 204px);
+    transform: translate(204px, 204px); }
+  .tile.tile-position-4-5 {
+    -webkit-transform: translate(204px, 272px);
+    -moz-transform: translate(204px, 272px);
+    transform: translate(204px, 272px); }
+  .tile.tile-position-4-6 {
+    -webkit-transform: translate(204px, 340px);
+    -moz-transform: translate(204px, 340px);
+    transform: translate(204px, 340px); }
+  .tile.tile-position-4-7 {
+    -webkit-transform: translate(204px, 408px);
+    -moz-transform: translate(204px, 408px);
+    transform: translate(204px, 408px); }
+  .tile.tile-position-4-8 {
+    -webkit-transform: translate(204px, 476px);
+    -moz-transform: translate(204px, 476px);
+    transform: translate(204px, 476px); }
+  .tile.tile-position-5-1 {
+    -webkit-transform: translate(272px, 0px);
+    -moz-transform: translate(272px, 0px);
+    transform: translate(272px, 0px); }
+  .tile.tile-position-5-2 {
+    -webkit-transform: translate(272px, 68px);
+    -moz-transform: translate(272px, 68px);
+    transform: translate(272px, 68px); }
+  .tile.tile-position-5-3 {
+    -webkit-transform: translate(272px, 136px);
+    -moz-transform: translate(272px, 136px);
+    transform: translate(272px, 136px); }
+  .tile.tile-position-5-4 {
+    -webkit-transform: translate(272px, 204px);
+    -moz-transform: translate(272px, 204px);
+    transform: translate(272px, 204px); }
+  .tile.tile-position-5-5 {
+    -webkit-transform: translate(272px, 272px);
+    -moz-transform: translate(272px, 272px);
+    transform: translate(272px, 272px); }
+  .tile.tile-position-5-6 {
+    -webkit-transform: translate(272px, 340px);
+    -moz-transform: translate(272px, 340px);
+    transform: translate(272px, 340px); }
+  .tile.tile-position-5-7 {
+    -webkit-transform: translate(272px, 408px);
+    -moz-transform: translate(272px, 408px);
+    transform: translate(272px, 408px); }
+  .tile.tile-position-5-8 {
+    -webkit-transform: translate(272px, 476px);
+    -moz-transform: translate(272px, 476px);
+    transform: translate(272px, 476px); }
+  .tile.tile-position-6-1 {
+    -webkit-transform: translate(340px, 0px);
+    -moz-transform: translate(340px, 0px);
+    transform: translate(340px, 0px); }
+  .tile.tile-position-6-2 {
+    -webkit-transform: translate(340px, 68px);
+    -moz-transform: translate(340px, 68px);
+    transform: translate(340px, 68px); }
+  .tile.tile-position-6-3 {
+    -webkit-transform: translate(340px, 136px);
+    -moz-transform: translate(340px, 136px);
+    transform: translate(340px, 136px); }
+  .tile.tile-position-6-4 {
+    -webkit-transform: translate(340px, 204px);
+    -moz-transform: translate(340px, 204px);
+    transform: translate(340px, 204px); }
+  .tile.tile-position-6-5 {
+    -webkit-transform: translate(340px, 272px);
+    -moz-transform: translate(340px, 272px);
+    transform: translate(340px, 272px); }
+  .tile.tile-position-6-6 {
+    -webkit-transform: translate(340px, 340px);
+    -moz-transform: translate(340px, 340px);
+    transform: translate(340px, 340px); }
+  .tile.tile-position-6-7 {
+    -webkit-transform: translate(340px, 408px);
+    -moz-transform: translate(340px, 408px);
+    transform: translate(340px, 408px); }
+  .tile.tile-position-6-8 {
+    -webkit-transform: translate(340px, 476px);
+    -moz-transform: translate(340px, 476px);
+    transform: translate(340px, 476px); }
+  .tile.tile-position-7-1 {
+    -webkit-transform: translate(408px, 0px);
+    -moz-transform: translate(408px, 0px);
+    transform: translate(408px, 0px); }
+  .tile.tile-position-7-2 {
+    -webkit-transform: translate(408px, 68px);
+    -moz-transform: translate(408px, 68px);
+    transform: translate(408px, 68px); }
+  .tile.tile-position-7-3 {
+    -webkit-transform: translate(408px, 136px);
+    -moz-transform: translate(408px, 136px);
+    transform: translate(408px, 136px); }
+  .tile.tile-position-7-4 {
+    -webkit-transform: translate(408px, 204px);
+    -moz-transform: translate(408px, 204px);
+    transform: translate(408px, 204px); }
+  .tile.tile-position-7-5 {
+    -webkit-transform: translate(408px, 272px);
+    -moz-transform: translate(408px, 272px);
+    transform: translate(408px, 272px); }
+  .tile.tile-position-7-6 {
+    -webkit-transform: translate(408px, 340px);
+    -moz-transform: translate(408px, 340px);
+    transform: translate(408px, 340px); }
+  .tile.tile-position-7-7 {
+    -webkit-transform: translate(408px, 408px);
+    -moz-transform: translate(408px, 408px);
+    transform: translate(408px, 408px); }
+  .tile.tile-position-7-8 {
+    -webkit-transform: translate(408px, 476px);
+    -moz-transform: translate(408px, 476px);
+    transform: translate(408px, 476px); }
+  .tile.tile-position-8-1 {
+    -webkit-transform: translate(476px, 0px);
+    -moz-transform: translate(476px, 0px);
+    transform: translate(476px, 0px); }
+  .tile.tile-position-8-2 {
+    -webkit-transform: translate(476px, 68px);
+    -moz-transform: translate(476px, 68px);
+    transform: translate(476px, 68px); }
+  .tile.tile-position-8-3 {
+    -webkit-transform: translate(476px, 136px);
+    -moz-transform: translate(476px, 136px);
+    transform: translate(476px, 136px); }
+  .tile.tile-position-8-4 {
+    -webkit-transform: translate(476px, 204px);
+    -moz-transform: translate(476px, 204px);
+    transform: translate(476px, 204px); }
+  .tile.tile-position-8-5 {
+    -webkit-transform: translate(476px, 272px);
+    -moz-transform: translate(476px, 272px);
+    transform: translate(476px, 272px); }
+  .tile.tile-position-8-6 {
+    -webkit-transform: translate(476px, 340px);
+    -moz-transform: translate(476px, 340px);
+    transform: translate(476px, 340px); }
+  .tile.tile-position-8-7 {
+    -webkit-transform: translate(476px, 408px);
+    -moz-transform: translate(476px, 408px);
+    transform: translate(476px, 408px); }
+  .tile.tile-position-8-8 {
+    -webkit-transform: translate(476px, 476px);
+    -moz-transform: translate(476px, 476px);
+    transform: translate(476px, 476px); }
+
+  .game-container {
+    margin-top: 20px; }
+
+  .tile .tile-inner {
+    font-size: 35px; }
+
+  .game-message p {
+    font-size: 30px !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    margin-top: 90px !important; }
+  .game-message .lower {
+    margin-top: 30px !important; } }
