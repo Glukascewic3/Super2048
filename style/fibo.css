@@ -393,6 +393,14 @@ hr {
     @media screen and (max-width: 520px) {
       .tile.tile-1597 .tile-inner {
         font-size: 15px; } }
+  .tile.tile-2584 .tile-inner {
+    color: #d9f9f8;
+    background: #edc461;
+    box-shadow: 0 0 30px 10px rgba(243, 202, 101, 0.33926), inset 0 0 0 1px rgba(255, 255, 255, 0.21098);
+    font-size: 35px; }
+    @media screen and (max-width: 520px) {
+      .tile.tile-2584 .tile-inner {
+        font-size: 15px; } }
   .tile.tile-4181 .tile-inner {
     color: #d9f9f8;
     background: #edc25a;
