@@ -906,7 +906,7 @@ hr {
     background: #edcf72;
     font-size: 24px; }
     @media screen and (max-width: 480px) {
-      .tile.tile-128 .tile-inner {
+      .tile.tile-7 .tile-inner {
         font-size: 15px; } }
   .tile.tile-8 .tile-inner {
     color: #f9f6f2;
