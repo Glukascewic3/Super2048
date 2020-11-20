@@ -949,7 +949,7 @@ hr {
   .tile.tile-144115188075855870 .tile-inner, .tile.tile-1548008755920 .tile-inner {
     color: #000000;
     background: rgb(0, 203, 0);
-    box-shadow: 0 0 30px 10px rgba(70, 255, 203, 1.0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    box-shadow: 0 0 30px 10px rgba(70, 255, 0, 1.0), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
     font-size: 3px; }
     @media screen and (max-width: 480px) {
       .tile.tile-144115188075855870 .tile-inner, .tile.tile-1548008755920 .tile-inner {
