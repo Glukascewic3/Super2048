@@ -100,7 +100,7 @@ button {
     animation: move-up 600ms ease-in;
     -webkit-animation-fill-mode: both;
     -moz-animation-fill-mode: both;
-    animation: both; }
+    animation-fill-mode: both; }
 
 .score-container:after {
   content: "Score"; }
@@ -648,21 +648,21 @@ hr {
   .tile.tile-524288 .tile-inner, .tile.tile-17711 .tile-inner, .tile.tile-786432 .tile-inner  {
     color: #f9f6f2;
     background: rgba(63, 72, 204, 0.8);
-    font-size: 13px; }
+    font-size: 14px; }
     @media screen and (max-width: 480px) {
       .tile.tile-524288 .tile-inner, .tile.tile-17711 .tile-inner, .tile.tile-786432 .tile-inner  {
         font-size: 4px; } }
   .tile.tile-1048576 .tile-inner, .tile.tile-28657 .tile-inner, .tile.tile-1572864 .tile-inner  {
     color: #f9f6f2;
     background: rgba(63, 72, 204, 0.9);
-    font-size: 11px; }
+    font-size: 12px; }
     @media screen and (max-width: 480px) {
       .tile.tile-1048576 .tile-inner, .tile.tile-28657 .tile-inner, .tile.tile-1572864 .tile-inner  {
         font-size: 4px; } }
   .tile.tile-2097152 .tile-inner, .tile.tile-46368 .tile-inner, .tile.tile-3145728 .tile-inner  {
     color: #f9f6f2;
     background: rgba(63, 72, 204, 1.0);
-    font-size: 11px; }
+    font-size: 12px; }
     @media screen and (max-width: 480px) {
       .tile.tile-2097152 .tile-inner, .tile.tile-46368 .tile-inner, .tile.tile-3145728 .tile-inner  {
         font-size: 4px; } }
