@@ -641,7 +641,7 @@ hr {
   .tile.tile-262144 .tile-inner, .tile.tile-10946 .tile-inner, .tile.tile-393216 .tile-inner  {
     color: #f9f6f2;
     background: rgba(63, 72, 204, 0.7);
-    font-size: 13px; }
+    font-size: 14px; }
     @media screen and (max-width: 480px) {
       .tile.tile-262144 .tile-inner, .tile.tile-10946 .tile-inner, .tile.tile-393216 .tile-inner  {
         font-size: 4px; } }
