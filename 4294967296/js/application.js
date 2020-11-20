@@ -214,7 +214,7 @@ function changeRule(add, merge, win) {
 }
 
 function normalAdd() {
-  return Math.random() < 0.75 ? 2 : 4;
+  return Math.random() < 0.9 ? 2 : 4;
 }
 
 function normalMerge(a, b) {
