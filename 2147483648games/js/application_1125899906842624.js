@@ -278,7 +278,7 @@ function powerTwo() {
       index = 1;
     } else {
       index <<= 1;
-      if (index > 65536) {
+      if (index > 4294967296) {
         index = 0;
       }
     }
