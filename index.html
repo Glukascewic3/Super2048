@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ultra 2048</title>
+
+  <link href="style/tiles.css" rel="stylesheet" type="text/css">
+  <link href="style/main.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div class="container">
+    <div class="heading">
+      <h1 class="title">Ultra 2048</h1>
+      <div class="scores-container">
+        <div class="score-container" id="score-container">0</div>
+        <div class="best-container">0</div>
+      </div>
+    </div>
+    <p class="game-intro" id="game-intro">Join the numbers and get to the <strong>2048 tile</strong> and beyond!</p>
+
+    <div class="game-container">
+      <div class="game-message">
+        <p></p>
+        <div class="lower">
+          <a class="retry-button">Try again</a>
+        </div>
+      </div>
+
+      <div class="grid-container" id="grid-container">
+      </div>
+
+      <div class="tile-container" id="tile-container">
+
+      </div>
+    </div>
+    <hr>
+    <p>
+      Time rush: <br>
+      <button name="time_rush" type="button" onclick="timeRush(60);">60s Time Rush</button>
+      <button name="time_rush" type="button" onclick="timeRush(300);">300s Time Rush</button>
+    </p>
+    <hr>
+    <p>
+      My GitHub: <a href="https://github.com/Glukascewic3/">Glukascewic3</a> <br>
+      Creator's GitHub: <a href="https://github.com/NoxUltima/">NoxUltima</a> <br>
+      Creator's Creator's GitHub: <a href="https://github.com/CyberZHG/">CyberZHG</a> <br>
+      Contributors to original 2147483648 site: <a href="https://github.com/jiangtyd/">jiangtyd</a>|
+      <a href="https://github.com/allbinbin/">allbinbin</a>
+    </p>
+    <hr/>
+    <p>
+      Save & Load: <br>
+      <button name="save_board" type="button" onclick="saveBoard();">Save Board</button>
+      <button name="load_board" type="button" onclick="loadBoard();">Load Board</button>
+    </p>
+    <hr>
+    <p>
+      Auto move: <br>
+      <button name="automove" type="button" onclick="doMovementPattern(corner);">Corner</button>
+      <button name="automove" type="button" onclick="doMovementPattern(swing);">Swing</button>
+      <button name="automove" type="button" onclick="doMovementPattern(swirl);">Swirl</button>
+      <button name="automove" type="button" onclick="doMovementPattern(random);">Random</button>
+      <br/>
+      <button type="button" onclick="stopMovement();">Stop</button>
+    </p>
+    <hr>
+    <p>
+      Special Mode: <br>
+      <button type="button" onclick="changeMode('normal');">Normal</button>
+      <button type="button" onclick="changeMode('alwaysTwo');">Always 1</button>
+      <button type="button" onclick="changeMode('fibonacci');">Fibonacci</button>
+      <button type="button" onclick="changeMode('threes');">Threes!</button>
+      <button type="button" onclick="changeMode('mergeAny');">Merge Any</button>
+      <button type="button" onclick="changeMode('powerTwo');">Power 2</button>
+      <button type="button" onclick="changeMode('tileZero');">Tile 0</button>
+      <button type="button" onclick="changeMode('tileNegative');">Negative</button>
+      <button type="button" onclick="changeMode('gravity');">Gravity</button>
+      <button type="button" onclick="window.location.href='auto_flappy.html';">Auto Flappy</button>
+    </p>
+    <hr>
+    <p>
+      Size: <br>
+      <button type="button" onclick="changeSize(1);">1×1</button>
+      <button type="button" onclick="changeSize(2);">2×2</button>
+      <button type="button" onclick="changeSize(3);">3×3</button>
+      <button type="button" onclick="changeSize(4);">4×4</button>
+      <button type="button" onclick="changeSize(5);">5×5</button>
+      <button type="button" onclick="changeSize(6);">6×6</button>
+      <button type="button" onclick="changeSize(7);">7×7</button>
+      <button type="button" onclick="changeSize(8);">8×8</button>
+      <button type="button" onclick="changeSize(9);">9×9</button>
+      <button type="button" onclick="changeSize(10);">10×10</button>
+      <button type="button" onclick="changeSize(11);">11×11</button>
+      <button type="button" onclick="changeSize(12);">12×12</button>
+      <button type="button" onclick="changeSize(13);">13×13</button>
+      <button type="button" onclick="changeSize(14);">14×14</button>
+      <button type="button" onclick="changeSize(15);">15×15</button>
+      <button type="button" onclick="changeSize(16);">16×16</button>
+    </p>
+    <hr>
+    <p>
+      Other 2048 variants made by me: <br>
+      <button type="button" onclick="window.location.href='original.html';">2048 Official</button>
+      <button type="button" onclick="window.location.href='endless.html';">2048 Endless</button>
+      <button type="button" onclick="window.location.href='8.html';">8</button>
+      <button type="button" onclick="window.location.href='size2x3.html';">16</button>
+      <button type="button" onclick="window.location.href='256.html';">256</button>
+      <button type="button" onclick="window.location.href='512.html';">512</button>
+      <button type="button" onclick="window.location.href='4096.html';">4096</button>
+      <button type="button" onclick="window.location.href='4096-5x5.html';">4096 5x5</button>
+      <button type="button" onclick="window.location.href='8192.html';">8192</button>
+      <button type="button" onclick="window.location.href='16384.html';">16384</button>
+      <button type="button" onclick="window.location.href='65536.html';">65536</button>
+      <button type="button" onclick="window.location.href='65536-8x8.html';">65536 8x8</button>
+      <button type="button" onclick="window.location.href='size5.html';">65536 Endless</button>
+      <button type="button" onclick="window.location.href='2097152.html';">2097152</button>
+      <button type="button" onclick="window.location.href='4194304.html';">4194304</button>
+      <button type="button" onclick="window.location.href='4194304-10x10.html';">4194304 10x10</button>
+      <button type="button" onclick="window.location.href='size6.html';">4194304 Endless</button>
+      <button type="button" onclick="window.location.href='134217728.html';">134217728</button>
+      <button type="button" onclick="window.location.href='536870912.html';">536870912</button>
+      <button type="button" onclick="window.location.href='2147483648.html';">2147483648</button>
+      <button type="button" onclick="window.location.href='4294967296.html';">4294967296</button>
+      <button type="button" onclick="window.location.href='137438953472.html';">137438953472</button>
+      <button type="button" onclick="window.location.href='4398046511104.html';">4398046511104</button>
+      <button type="button" onclick="window.location.href='2048x2048x2048x2048.html';">17592186044416</button>
+      <button type="button" onclick="window.location.href='18446744073709551616.html';">18446744073709551616</button>
+      <button type="button" onclick="window.location.href='590295810358705700000.html';">590295810358705700000</button>
+      <button type="button" onclick="window.location.href='2048-5x5.html';">2048 5x5</button>
+      <button type="button" onclick="window.location.href='2048-6x6.html';">2048 6x6</button>
+      <button type="button" onclick="window.location.href='2048-12x12.html';">1 Nonillion</button>
+      <button type="button" onclick="window.location.href='2048-16x16.html';">1 Undecillion</button>
+      <button type="button" onclick="window.location.href='fibo.html';">Fibo</button>
+      <button type="button" onclick="window.location.href='fibonacci.html';">2584</button>
+      <button type="button" onclick="window.location.href='5702887.html';">5702887</button>
+      <button type="button" onclick="window.location.href='lucas.html';">2207</button>
+      <button type="button" onclick="window.location.href='threes.html';">3072</button>
+      <button type="button" onclick="window.location.href='threes-8x8.html';">1610612736</button>
+      <button type="button" onclick="window.location.href='threes-16x16.html';">1610612736 16x16</button>
+      <button type="button" onclick="window.location.href='power3.html';">2187</button>
+      <button type="button" onclick="window.location.href='power5.html';">3125</button>
+      <button type="button" onclick="window.location.href='pwrup.html';">PWRUP</button>
+      <button type="button" onclick="window.location.href='negative.html';">±2048</button>
+      <button type="button" onclick="window.location.href='diagonal.html';">Diagonal</button>   
+      <button type="button" onclick="window.location.href='diagonal-4x4.html';">Diagonal 4x4</button> 
+      <button type="button" onclick="window.location.href='to2048.html';">To 2048</button>
+      <button type="button" onclick="window.location.href='to65536.html';">To 65536</button>
+      <button type="button" onclick="window.location.href='to4194304.html';">To 4194304</button>
+      <button type="button" onclick="window.location.href='to137438953472.html';">To 137438953472</button>
+      <button type="button" onclick="window.location.href='finals256.html';">Finals 256</button>
+      <button type="button" onclick="window.location.href='finals.html';">Finals 2048</button>
+      <button type="button" onclick="window.location.href='finals65536.html';">Finals 65536</button>
+      <button type="button" onclick="window.location.href='finals4194304.html';">Finals 4194304</button>
+      <button type="button" onclick="window.location.href='finals137438953472.html';">Finals 137438953472</button>
+      <button type="button" onclick="window.location.href='reverse.html';">1</button>
+      <button type="button" onclick="window.location.href='zen.html';">Zen</button>
+      <button type="button" onclick="window.location.href='dontmake16.html';">Don't make 16</button>
+      <button type="button" onclick="window.location.href='dontmake128.html';">Don't make 128</button>
+      <button type="button" onclick="window.location.href='dontmake2048.html';">Don't make 2048</button>
+      <button type="button" onclick="window.location.href='classic.html';">1024</button>
+      <button type="button" onclick="window.location.href='32.html';">32</button>
+      <button type="button" onclick="window.location.href='144.html';">144</button>
+      <button type="button" onclick="window.location.href='125.html';">125</button>
+      <button type="button" onclick="window.location.href='363.html';">363</button>
+      <button type="button" onclick="window.location.href='hex.html';">2048 Hex</button>
+      <button type="button" onclick="window.location.href='cross.html';">Cross 2048</button>
+      <button type="button" onclick="window.location.href='cube.html';">3D</button>
+      <button type="button" onclick="window.location.href='hypercube.html';">4D</button>
+      <button type="button" onclick="window.location.href='megacube.html';">5D</button>
+      <button type="button" onclick="window.location.href='pm64.html';">±64</button>
+      <button type="button" onclick="window.location.href='delirium.html';">2K48</button>      
+      <button type="button" onclick="window.location.href='204ever8.html';">204ever8</button>
+      <button type="button" onclick="window.location.href='2.html';">2</button>
+      <button type="button" onclick="window.location.href='25.html';">25</button>
+      <button type="button" onclick="window.location.href='25easy.html';">25 (Easy)</button>
+      <button type="button" onclick="window.location.href='2-2-4.html';">Yet Another 2048</button>
+      <button type="button" onclick="window.location.href='4294967296/index.html';">4294967296 Official</button>
+      <button type="button" onclick="window.location.href='fork.html';">2048 Fork</button>
+      <button type="button" onclick="window.location.href='Super2048/index.html';">Super2048</button>
+      <button type="button" onclick="window.location.href='beyond2048.html';">2048 and Beyond</button>
+      <button type="button" onclick="window.location.href='animated2048.html';">Animated 2048</button>   
+    </p>
+    <hr>
+    <p>
+      Skin: <br>
+      <button type="button" onclick="window.location.href='skin_santi.html';">死神永生</button>
+      <button type="button" onclick="window.location.href='skin_shito.html';">使徒</button>
+      <button type="button" onclick="window.location.href='skin_bkb.html';">兵庫北</button>
+      <button type="button" onclick="window.location.href='skin_chemistry.html';">Chemistry</button>
+    </p>
+    <hr>
+    <p>
+      2048 with Auto Move: <br>
+      <button type="button" onclick="window.location.href='9007199254740992.html';">9007199254740992</button>
+      <button type="button" onclick="window.location.href='8944394323791464.html';">8944394323791464</button>
+      <button type="button" onclick="window.location.href='5559060566555523.html';">5559060566555523</button>
+      <button type="button" onclick="window.location.href='±9007199254740992.html';">±9007199254740992</button>
+      <button type="button" onclick="window.location.href='1610612736.html';">1610612736 AI</button>
+    </p>
+    <hr>
+    <p>
+      2147483648 Games: <br>
+      <button type="button" onclick="window.location.href='2147483648/index.html';">2147483648</button>
+      <button type="button" onclick="window.location.href='2147483648/1024.html';">2147483648 with 1024</button>
+      <button type="button" onclick="window.location.href='2147483648/easy.html';">214748364e</button>
+      <button type="button" onclick="window.location.href='2147483648/hard.html';">2147483648 - Hard</button>
+      <button type="button" onclick="window.location.href='2147483648/advanced.html';">2147483648 - 高级版</button>
+      <button type="button" onclick="window.location.href='2147483648/special.html';">2147483648 (Special)</button>
+      <button type="button" onclick="window.location.href='2147483648/137438953472.html';">137438953472</button>
+      <button type="button" onclick="window.location.href='2147483648/1125899906842624.html';">1125899906842624</button>
+      <button type="button" onclick="window.location.href='2147483648/2147483648game1.html';">Game 1 (2147483648)</button>
+      <button type="button" onclick="window.location.href='2147483648/2147483648game2.html';">Game 2 (2147483648)</button>
+      <button type="button" onclick="window.location.href='2147483648/2147483648game3.html';">Game 3 (2147483648)</button>
+      <button type="button" onclick="window.location.href='2147483648/remix.html';">2147483648 Remix</button>
+      <button type="button" onclick="window.location.href='2147483648/1610612736.html';">1610612736</button>
+    </p>
+    <hr>
+    <p>
+      Check out other 2048 variants here:
+      <button type="button" onclick="window.location.href='allthe2048.html';">ALL THE 2048</button>
+    </p>
+    <hr>
+    <p class="game-explanation">
+      <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one!</strong>
+    </p>
+    <hr>
+    <p>
+    <strong class="important">Note:</strong> This site is <strong>NOT</strong> the official version of 2147483648. You can play it on your phone via <a href="http://NoxUltima.github.io/2147483648">http://git.io/2147483648.</a> All other apps or sites are derivatives or fakes, and should be used with caution.
+    </p>
+    <hr>
+    <p>
+    Official 2048 created by <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli.</a> Based on <a href="https://itunes.apple.com/us/app/1024!/id823499224" target="_blank">1024 by Veewo Studio</a> and conceptually similar to <a href="http://asherv.com/threes/" target="_blank">Threes by Asher Vollmer.</a>
+    </p>
+    <hr>
+    <p>
+    External links: Those are some of my other 2048 variants - different sizes and different goals.
+    </p>
+    <hr>
+  </div>
+  <script src="js/index.js"></script>
+  
+  <script>
+    /*(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-49094472-1', 'cyberzhg.github.io');
+    ga('send', 'pageview');*/
+  </script>
+</body>
+</html>
